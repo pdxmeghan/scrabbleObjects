@@ -8,4 +8,16 @@ function scrabble(letter) {
   }
 
    return value;
-};
+}
+
+$(document).ready(function()  {
+  $("form.formOne").submit(function(event) {
+    var word = $("input#word").val();
+    var answer = scrabble(word);
+
+    $("#result1").text(answer);
+    $("#result").show();
+
+    event.preventDefault();
+  });
+});
